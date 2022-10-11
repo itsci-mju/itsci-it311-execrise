@@ -12,13 +12,8 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = "org.itsci.it311.app")
 public class AppConfig {
 
-    @Bean
+    @Bean(initMethod = "doSomethingInit", destroyMethod="doSomethingDestroy")
     public FortuneService getFortunesService() {
         return new HappyFortuneService();
-    }
-
-    @Bean
-    public Coach getCoach(FortuneService fortuneService) {
-        return new BaseballCoach(fortuneService);
     }
 }

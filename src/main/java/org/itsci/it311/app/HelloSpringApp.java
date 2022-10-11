@@ -10,7 +10,7 @@ public class HelloSpringApp {
         // load the spring configuration file
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         // retrieve bean from spring contrainer
-        Coach bean = context.getBean(Coach.class);
+        Coach bean = (Coach) context.getBean("theITSCICoach");
         // call method on bean
         System.out.println(bean.getDailyWorkout());
         // call our new method for fortune

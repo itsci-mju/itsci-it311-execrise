@@ -1,5 +1,8 @@
 package org.itsci.it311.app.bean;
 
+import org.springframework.stereotype.Component;
+
+@Component("theITSCICoach")
 public class BaseballCoach implements Coach {
     private FortuneService fortuneService;
 
